@@ -1,0 +1,79 @@
+body{
+font-family: 'Lexend',serif;
+font-style: normal;
+}
+.nav_bar {
+    box-shadow: 0 1px 10px gray; 
+    display: flex; 
+    justify-content: center; 
+    position: relative;  
+    top: 30px;
+    font-size: 30px;
+    
+}
+.help{
+    position: relative;
+    top: 45px;
+    display: flex;
+    justify-content:flex-end;
+    margin-right: 30px;
+}
+.help img{
+    width: 40px;
+    height: 40px;
+}
+.instructions{
+    position: absolute;
+    background-color: white;
+    height: 0vh;
+    width: 25vw;
+    left: 38vw;
+    overflow: hidden;
+    z-index:1;
+    box-shadow: 0 1px 10px gray; 
+    transition: 0.5s height;
+}
+.instructions img{
+    width: 30px;
+    height: 30px;
+    float: right;
+}
+.wrapper{
+    position: relative;
+    justify-content: center;
+    top: 170px;
+
+}
+.row{
+    display: flex;
+    justify-content: center;
+    
+}
+.row label{
+    border: 1px solid gray;
+    font-size: 40px;
+    margin-left: 5px;
+    margin-bottom: 5px;
+    width: 50px;
+    text-decoration: underline;
+    height: 50px;
+    color: white;
+    text-align: center;
+}
+.submition{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    top: 230px;
+}
+#win{
+    background-color: black;
+    color: white;
+    display: none;
+    position: absolute;
+    top: 30%;
+    left: 47%;
+}
+#text{
+    border-radius: 10px;
+}
