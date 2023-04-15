@@ -8,7 +8,6 @@ font-style: normal;
     justify-content: center; 
     position: relative;  
     top: 30px;
-    font-size: 30px;
     
 }
 .help{
@@ -21,6 +20,7 @@ font-style: normal;
 .help img{
     width: 40px;
     height: 40px;
+    cursor: pointer;
 }
 .instructions{
     position: absolute;
@@ -32,16 +32,18 @@ font-style: normal;
     z-index:1;
     box-shadow: 0 1px 10px gray; 
     transition: 0.5s height;
+    text-align: center;
 }
 .instructions img{
     width: 30px;
     height: 30px;
     float: right;
+    cursor: pointer;
 }
 .wrapper{
     position: relative;
     justify-content: center;
-    top: 170px;
+    top: 130px;
 
 }
 .row{
@@ -59,12 +61,15 @@ font-style: normal;
     height: 50px;
     color: white;
     text-align: center;
+    transition: 0.2s background-color;
 }
 .submition{
     position: relative;
-    display: flex;
-    justify-content: center;
-    top: 230px;
+    display:flex;
+    flex-direction: column;
+    top: 170px;
+    align-items: center;
+    gap: 10px;
 }
 #win{
     background-color: black;
