@@ -1,45 +1,15 @@
-// import { WORDS } from "./words.js";
+import { WORDS } from './words.js';
 
 var submit = document.getElementById('submit');
 var win = document.getElementById('win');
 var help = document.getElementById('help');
 var close = document.getElementById('close');
 
-// some of the 5 leter words copied from words.js
-const WORDS = [
-    'cried', 
-     'check',
-    'floor',
-    'begin',
-    'woman',
-    'alone',
-    'plane',
-    'spell',
-    'watch',
-    'carry',
-    'wrote',
-    'clear',
-    'named',
-    'books',
-    'child',
-    'glass',
-    'human',
-    'takes',
-    'party',
-    'build',
-    'seems',
-    'blood',
-    'sides',
-    'seven',
-    'mouth',
-    'solve',
-    'north',
-    'value',
-]
-// randomly select a word from the WORDS array in WORDS.js
-var word = WORDS[Math.floor(Math.random() * WORDS.length)]; 
+var word =getRandomItem(WORDS);
 var answer = word.split('');
 var pos = 1;
+
+console.log(word);
 
 $('#submit').click(function() {
   var textarea = document.getElementById('text').value;
@@ -95,4 +65,15 @@ $('#restart').click(function() {
   // Refresh the page
   location.reload();
 });
+
+function getRandomItem(WORDS) {
+
+  // get random index value
+  const randomIndex = Math.floor(Math.random() * WORDS.length);
+
+  // get random item
+  const item = WORDS[randomIndex];
+
+  return item;
+}
 
