@@ -14,6 +14,7 @@ console.log(word);
 $('#submit').click(function() {
   var textarea = document.getElementById('text').value;
   var text = textarea.split('');
+  win.style.display='none'
   
   // chceks if the word really exists or not
   if(WORDS.includes(textarea)){  
@@ -21,6 +22,10 @@ $('#submit').click(function() {
      if (pos > 25) {
         win.textContent = 'game over!';
         win.style.display = 'inline-block';
+        const text = document.getElementById('text');
+        text.parentNode.removeChild(text);
+        submit.parentNode.removeChild(submit);
+
       } else {
         text.forEach(t => {
           var label = document.getElementById(pos);
@@ -47,7 +52,8 @@ $('#submit').click(function() {
       }
   }
   else{
-    alert('Error: Invalid Word! Please Enter a valid word!')
+        win.textContent = 'Error: Invalid Word! Please Enter a valid word!';
+        win.style.display = 'inline-block';
   }
 });
 
