@@ -16,7 +16,7 @@ $('#submit').click(function() {
   var text = textarea.split('');
   win.style.display='none'
   
-  // chceks if the word really exists or not
+  // checks if the word really exists or not
   if(WORDS.includes(textarea)){  
     
      if (pos > 25) {
@@ -27,21 +27,19 @@ $('#submit').click(function() {
         submit.parentNode.removeChild(submit);
 
       } else {
-        text.forEach(t => {
+        text.forEach((t, index) => {
           var label = document.getElementById(pos);
           label.textContent = t;
           pos++;
-          answer.forEach(a => {
-            if (answer.includes(t) && answer.indexOf(t) != text.indexOf(t)) {
-              label.style.backgroundColor = '#c9b458';
-            } else if (answer.indexOf(t) == text.indexOf(t)) {
-              label.style.backgroundColor = '#6aaa64';
-            } else if (answer.indexOf(t) == -1) {
-              label.style.backgroundColor = '#787c7e';
-            }
-          });
+          if (answer[index] === t) {
+            label.style.backgroundColor = '#6aaa64';// to display green 
+          } else if (answer.includes(t)) {
+            label.style.backgroundColor = '#c9b458';// to display yellow 
+          } else {
+            label.style.backgroundColor = '#787c7e';// to display grey 
+          }
         });
-      }
+            }
       if (word === textarea) {
         win.textContent = 'You Won!';
         win.style.display = 'inline-block';
@@ -59,7 +57,7 @@ $('#submit').click(function() {
 
 $('#help').click(function() {
   var inst = document.querySelector('.instructions');
-  inst.style.height = '50vh';
+  inst.style.height = '60vh';
 });
 
 $('#close').click(function() {

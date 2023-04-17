@@ -26,13 +26,14 @@ font-style: normal;
     position: absolute;
     background-color: white;
     height: 0vh;
-    width: 25vw;
+    width: 50vw;
     left: 38vw;
-    overflow: hidden;
+    
     z-index:1;
     box-shadow: 0 1px 10px gray; 
     transition: 0.5s height;
     text-align: center;
+    overflow: scroll;
 }
 .instructions img{
     width: 30px;
@@ -40,6 +41,21 @@ font-style: normal;
     float: right;
     cursor: pointer;
 }
+.instructions .ex label{
+    border: 2px solid grey;
+    padding: 10px;
+}
+.instructions .example1 #e1{
+    background-color: #6aaa64;
+}
+.instructions .example2 #e2{
+    background-color: #c9b458;
+}
+.instructions .example3 #e4{
+    background-color: #787c7e;
+}
+
+
 .wrapper{
     position: relative;
     justify-content: center;
@@ -78,7 +94,29 @@ font-style: normal;
     position: absolute;
     top: 30%;
     left: 47%;
+    box-shadow: 0 1px 10px gray; 
 }
 #text{
     border-radius: 10px;
+    font-family: 'Lexend',serif;
+    font-style: normal;
+    resize: none;
+    text-align: center;
+}
+button{
+    font-family: 'Lexend',serif;
+    font-style: normal;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 10px; 
+    transition: 0.5s background-color;   
+}
+button:hover{
+    background-color: rgb(68, 68, 68);
+    color: white;
+}
+@media (min-width:900px) {
+ .instructions{
+    width: 25vw;
+ }   
 }
