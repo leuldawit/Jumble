@@ -11,6 +11,14 @@
 
   console.log(word);
 
+  var textarea = document.getElementById('text')
+  textarea.addEventListener('keydown',function(event){
+    if(event.key==='Enter'){
+      event.preventDefault();
+      submit.dispatchEvent(new Event('click'));
+    }
+  })
+
   $('#submit').click(function() {
     var textarea = document.getElementById('text').value.toLowerCase();
     var text = textarea.split('');
@@ -40,6 +48,7 @@
             }
           });
               }
+
         if (word === textarea) {
           win.textContent = 'You Won!';
           win.style.display = 'inline-block';
@@ -49,6 +58,15 @@
           submit.parentNode.removeChild(submit);
         }
     }
+    else if(document.getElementById('text').value.trim()==='') {
+      win.textContent='please enter a word';
+      win.style.display = 'inline-block';
+       }
+       else if(document.getElementById('text').value.length!=5) {
+        win.textContent='please enter 5 letter word';
+        win.style.display = 'inline-block';
+         }
+
     else{
           win.textContent = 'Error: Invalid Word! Please Enter a valid word!';
           win.style.display = 'inline-block';
